@@ -85,7 +85,7 @@ spec:
               (exec /opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.conf $USE_ADDITIONAL_OPTIONS --rfsimulator.serveraddr $RFSIM_IP_ADDRESS) &
               sleep 10
               echo "iperf starting-----------------------------------------------------------------------------"
-              iperf3 -s -B 12.1.1.100;
+              iperf3 -s -i 1;
             {{- else}}
               exec  /opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.conf $USE_ADDITIONAL_OPTIONS;
             {{- end }}
