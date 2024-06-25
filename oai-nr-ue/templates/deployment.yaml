@@ -85,7 +85,7 @@ spec:
               (exec /opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.conf $USE_ADDITIONAL_OPTIONS --rfsimulator.serveraddr $RFSIM_IP_ADDRESS ) &
               sleep 10
               echo "iperf starting-----------------------------------------------------------------------------"
-              ue_ip=$(ip addr show oaitun_ue1  | awk '/inet / {print $2}' | cut -d'/' -f1) && iperf3 -s -B $ue_ip;
+              ue_ip=$(ip addr show oaitun_ue1  | awk '/inet / {print $2}' | cut -d'/' -f1) && iperf3 -s -i;
             {{- else}}
               exec  /opt/oai-nr-ue/bin/nr-uesoftmodem -O /opt/oai-nr-ue/etc/nr-ue.conf $USE_ADDITIONAL_OPTIONS;
             {{- end }}
